@@ -14,18 +14,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist.presentation.MainActivity
 import com.example.todolist.presentation.MainActivityViewModel
 import com.example.todolist.R
+import com.example.todolist.UserPref.UserModel
+import com.example.todolist.UserPreference
 import com.example.todolist.presentation.adapter.CategoryAdapter
 import com.example.todolist.presentation.adapter.TasksAdapter
 import com.example.todolist.databinding.FragmentBaseBinding
 import com.example.todolist.data.model.TaskCategoryInfo
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 import javax.inject.Inject
 import javax.inject.Named
 
 @AndroidEntryPoint
 class BaseFragment : ParentFragment() {
+
+    private lateinit var  mUserPreference: UserPreference
+    private lateinit var  userModel: UserModel
 
     private lateinit var viewModel: MainActivityViewModel
     private lateinit var binding : FragmentBaseBinding
@@ -40,6 +44,16 @@ class BaseFragment : ParentFragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_base, container, false)
         return binding.root
+
+
+        initUsername()
+    }
+
+    private fun initUsername() {
+        // Mengambil Text Dari UserPreference
+        mUserPreference = UserPreference(requireContext())
+        userModel = mUserPreference.getUser()
+        binding.champText.text = userModel.name
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -128,4 +142,6 @@ class BaseFragment : ParentFragment() {
         binding.categoriesRecyclerView.adapter = adapter2
         binding.categoriesRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
     }
+
+
 }

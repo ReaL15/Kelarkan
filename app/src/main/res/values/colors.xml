@@ -11,4 +11,7 @@
     <color name="light_grey">#ececec</color>
     <color name="dark_blue">#1D59B3</color>
     <color name="light_blue">#42A4EB</color>
+    <color name="main_color">#4288E9</color>
+    <color name="silver">#A1A1A1</color>
+
 </resources>

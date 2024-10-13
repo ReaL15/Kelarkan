@@ -38,4 +38,15 @@
     <string name="high_priority_tasks">High priority tasks</string>
     <string name="general">General</string>
     <string name="rate_the_app">Rate the app</string>
+
+    <string name="onboard">The App that solves all of your needs</string>
+    <string name="onboard1">this app is designed to help you manage your daily activities.</string>
+    <string name="getstared">GET STARTED</string>
+
+    <string name="welcome_champ">Welcome Champ!</string>
+    <string name="call_you">Call you</string>
+    <string name="on_click">You\'re one click away to get started!</string>
+    <string name="username">Username</string>
+    <string name="get">GET STARTED!</string>
+
 </resources>
